@@ -1,24 +1,41 @@
-//js date is started on 1 jan 1970
-let mydate=new Date();
-// console.log(mydate);
-// console.log(mydate.toDateString());         //
-// console.log(mydate.toString());
-// console.log(mydate.toLocaleString());
-// console.log(typeof mydate);
+let mydate = new Date();
+console.log(mydate); // Output: Current date and time in ISO format, e.g., "2024-08-31T18:04:51.336Z"
 
-//let newdate=new Date(2024,1,23);      // if we put 31 in the month that doesn't contain 31 date then it will show it's next moth
-//let nedate=new Date(2024,1,23,4,1);   //2/23/2024, 4:01:00 AM
-// let nedate=new Date("22-12-2024");        //indain standard time is not allowed     output: "Invalid Date"
-// //console.log(nedate.toLocaleString());   
+console.log(mydate.toDateString()); // Output: Current date in a human-readable format, e.g., "Sat Aug 31 2024"
 
-// let myday=Date.now();       //1725127034532 milli second
-// console.log(myday);     // 1725127269348
-    
-// console.log(nedate.getTime());       //NaN
-// console.log(Math.floor(Date.now()/1000));       //current time in second : 1725127269
+console.log(mydate.toString()); // Output: Complete date and time string, e.g., "Sat Aug 31 2024 18:04:51 GMT+0000 (Coordinated Universal Time)"
 
+console.log(mydate.toLocaleString()); // Output: Current date and time in a locale-sensitive format, e.g., "8/31/2024, 6:04:51 PM"
+
+console.log(typeof mydate); // Output: "object" (since `mydate` is a Date object)
+
+// Creating a new Date object for February 23, 2024, at 4:01 AM
+let newdate = new Date(2024, 1, 23); // Note: JavaScript months are 0-indexed (0 for January)
+console.log(newdate.toLocaleString()); // Output: "2/23/2024, 12:00:00 AM"
+
+// Creating a new Date object for February 23, 2024, at 4:01 AM
+let nedate = new Date(2024, 1, 23, 4, 1);
+console.log(nedate.toLocaleString()); // Output: "2/23/2024, 4:01:00 AM"
+
+// Creating a new Date object using an invalid date format
+let nedateInvalid = new Date("22-12-2024"); // Invalid format, should use "YYYY-MM-DD" or "MM/DD/YYYY"
+console.log(nedateInvalid.toLocaleString()); // Output: "Invalid Date"
+
+// Get the current timestamp in milliseconds since January 1, 1970
+let myday = Date.now();
+console.log(myday); // Output: A large integer representing milliseconds, e.g., "1725127269348"
+
+// Get the timestamp of the 'nedateInvalid' object (which is invalid)
+console.log(nedateInvalid.getTime()); // Output: NaN (since the date is invalid)
+
+// Get the current time in seconds since January 1, 1970
+console.log(Math.floor(Date.now() / 1000)); // Output: A large integer representing seconds, e.g., "1725127269"
+
+// Current Date, Month, and Day
 let date = new Date();
 
-console.log(date);              //2024-08-31T18:04:51.336Z
-console.log(date.getMonth()+1);   //7
-console.log(date.getDay());     //6
+console.log(date); // Output: Current date and time in ISO format, e.g., "2024-08-31T18:04:51.336Z"
+
+console.log(date.getMonth() + 1); // Output: 9 (as months are 0-indexed in JavaScript, so August (8) + 1 = September (9))
+
+console.log(date.getDay()); // Output: 6 (Saturday, as `0` is Sunday)
